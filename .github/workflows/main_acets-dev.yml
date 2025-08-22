@@ -58,4 +58,4 @@ jobs:
         with:
           app-name: 'acets-dev'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C6B6F3348C3F4D0DAE392B5F019C08A4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_154C97BE5EEC4AF985C5ABF9C4D762A4 }}
