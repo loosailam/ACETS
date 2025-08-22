@@ -16,7 +16,7 @@ import traceback
 import uuid
 from flask import Flask, Response, render_template, request, jsonify, session, redirect, url_for
 # import uvicorn
-import pyodbc
+# import pyodbc
 from flask_socketio import SocketIO, join_room
 from azure.identity import DefaultAzureCredential
 from openai import AzureOpenAI
@@ -103,8 +103,8 @@ logger.info(f"sql_database: {sql_database}")
 logger.info(f"sql_username: {sql_username}")
 logger.info(f"sql_password: {sql_password}")
 
-# Initialize the database connection
-sql_conn = initialize_database(server=sql_server, database=sql_database, username=sql_username, password=sql_password)
+# # Initialize the database connection
+# sql_conn = initialize_database(server=sql_server, database=sql_database, username=sql_username, password=sql_password)
 
 # Global variables
 client_contexts = {} # Client contexts
@@ -155,7 +155,7 @@ def process_input():
     logger.info(f"scenario: {scenario}")
     logger.info(f"scenario_num: {scenario_num}")
 
-    insert_train_record(conn=sql_conn, name=name, student_id=student_id, diploma=diploma, date=date, scenario=scenario)
+    # insert_train_record(conn=sql_conn, name=name, student_id=student_id, diploma=diploma, date=date, scenario=scenario)
 
     # Store in session
     session['name'] = name
