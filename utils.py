@@ -21,21 +21,51 @@ if not logger.hasHandlers():
 
 def load_env_variables():
     load_dotenv()
+    # return {
+    #     # Speech resource
+    #     "speech_region": os.environ.get('SPEECH_REGION'), # e.g. westus2
+    #     "speech_key": os.environ.get('SPEECH_KEY'),
+    #     "speech_private_endpoint": os.environ.get('SPEECH_PRIVATE_ENDPOINT'), # e.g. https://my-speech-service.cognitiveservices.azure.com/ (optional)
+    #     "speech_resource_url": os.environ.get('SPEECH_RESOURCE_URL'), # e.g. /subscriptions/6e83d8b7-00dd-4b0a-9e98-dab9f060418b/resourceGroups/my-rg/providers/Microsoft.CognitiveServices/accounts/my-speech (optional, only used for private endpoint)
+    #     "user_assigned_managed_identity_client_id": os.environ.get('USER_ASSIGNED_MANAGED_IDENTITY_CLIENT_ID'), # e.g. the client id of user assigned managed identity accociated to your app service (optional, only used for private endpoint and user assigned managed identity)
+    #     # OpenAI resource
+    #     "azure_openai_endpoint": os.environ.get('AZURE_OPENAI_ENDPOINT'), # e.g. https://my-aoai.openai.azure.com/
+    #     "azure_openai_api_key": os.environ.get('AZURE_OPENAI_API_KEY'),
+    #     "azure_openai_deployment_name": os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME'), # e.g. my-gpt-35-turbo-deployment
+    #     # Cognitive search resource (optional)
+    #     "cognitive_search_endpoint": os.environ.get('COGNITIVE_SEARCH_ENDPOINT'), # e.g. https://my-cognitive-search.search.windows.net/
+    #     "cognitive_search_api_key": os.environ.get('COGNITIVE_SEARCH_API_KEY'),
+    #     "cognitive_search_index_name": os.environ.get('COGNITIVE_SEARCH_INDEX_NAME'), # e.g. my-search-index
+    #     # Customized ICE server (optional)
+    #     "ice_server_url": os.environ.get('ICE_SERVER_URL'), # The ICE URL, e.g. turn:x.x.x.x:3478
+    #     "ice_server_url_remote": os.environ.get('ICE_SERVER_URL_REMOTE'), # The ICE URL for remote side, e.g. turn:x.x.x.x:3478. This is only required when the ICE address for remote side is different from local side.
+    #     "ice_server_username": os.environ.get('ICE_SERVER_USERNAME'), # The ICE username
+    #     "ice_server_password": os.environ.get('ICE_SERVER_PASSWORD'), # The ICE password
+    #     # Azure Blob Storage (optional)
+    #     "storage_account_name": os.environ.get('STORAGE_ACCOUNT_NAME'),
+    #     "storage_account_container_name": os.environ.get('STORAGE_ACCOUNT_CONTAINER_NAME'),
+    #     "storage_account_key": os.environ.get('STORAGE_ACCOUNT_KEY'),
+    #     # Azure SQL
+    #     "sql_server": os.environ.get('SQL_SERVER'),
+    #     "sql_database": os.environ.get('SQL_DATABASE'),
+    #     "sql_username": os.environ.get('SQL_USERNAME'),
+    #     "sql_password": os.environ.get('SQL_PASSWORD')             
+    # }
     return {
         # Speech resource
-        "speech_region": os.environ.get('SPEECH_REGION'), # e.g. westus2
-        "speech_key": os.environ.get('SPEECH_KEY'),
-        "speech_private_endpoint": os.environ.get('SPEECH_PRIVATE_ENDPOINT'), # e.g. https://my-speech-service.cognitiveservices.azure.com/ (optional)
-        "speech_resource_url": os.environ.get('SPEECH_RESOURCE_URL'), # e.g. /subscriptions/6e83d8b7-00dd-4b0a-9e98-dab9f060418b/resourceGroups/my-rg/providers/Microsoft.CognitiveServices/accounts/my-speech (optional, only used for private endpoint)
-        "user_assigned_managed_identity_client_id": os.environ.get('USER_ASSIGNED_MANAGED_IDENTITY_CLIENT_ID'), # e.g. the client id of user assigned managed identity accociated to your app service (optional, only used for private endpoint and user assigned managed identity)
+        "speech_region": "westus2", # e.g. westus2
+        "speech_key": "AAPvcKSbYW2inc9f9oOXrKByRsTwrm5WJRNngXxZpeN4142xmgZSJQQJ99BFAC8vTInXJ3w3AAAYACOGwHjY",
+        "speech_private_endpoint": None, # e.g. https://my-speech-service.cognitiveservices.azure.com/ (optional)
+        "speech_resource_url": None, # e.g. /subscriptions/6e83d8b7-00dd-4b0a-9e98-dab9f060418b/resourceGroups/my-rg/providers/Microsoft.CognitiveServices/accounts/my-speech (optional, only used for private endpoint)
+        "user_assigned_managed_identity_client_id": None, # e.g. the client id of user assigned managed identity accociated to your app service (optional, only used for private endpoint and user assigned managed identity)
         # OpenAI resource
-        "azure_openai_endpoint": os.environ.get('AZURE_OPENAI_ENDPOINT'), # e.g. https://my-aoai.openai.azure.com/
-        "azure_openai_api_key": os.environ.get('AZURE_OPENAI_API_KEY'),
-        "azure_openai_deployment_name": os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME'), # e.g. my-gpt-35-turbo-deployment
+        "azure_openai_endpoint": "https://acets-ai-foundry-dev-eastus.openai.azure.com/", # e.g. https://my-aoai.openai.azure.com/
+        "azure_openai_api_key": "t8rifsaY8FLwy79SVjUeoM6p73lorgbz1Ev6rA9aoj2PIaUH1rkJQQJ99BFACYeBjFXJ3w3AAAAACOGQt5R",
+        "azure_openai_deployment_name": "gpt-4.1-mini", # e.g. my-gpt-35-turbo-deployment
         # Cognitive search resource (optional)
-        "cognitive_search_endpoint": os.environ.get('COGNITIVE_SEARCH_ENDPOINT'), # e.g. https://my-cognitive-search.search.windows.net/
-        "cognitive_search_api_key": os.environ.get('COGNITIVE_SEARCH_API_KEY'),
-        "cognitive_search_index_name": os.environ.get('COGNITIVE_SEARCH_INDEX_NAME'), # e.g. my-search-index
+        "cognitive_search_endpoint": "https://acets-dev-ai-search.search.windows.net", # e.g. https://my-cognitive-search.search.windows.net/
+        "cognitive_search_api_key": "HqfSu66tFjlfW6tn65FWHRLZjZqvvEFskvFjLxGjOiAzSeAg7ZXi",
+        "cognitive_search_index_name": "scenario-dev-data-index", # e.g. my-search-index
         # Customized ICE server (optional)
         "ice_server_url": os.environ.get('ICE_SERVER_URL'), # The ICE URL, e.g. turn:x.x.x.x:3478
         "ice_server_url_remote": os.environ.get('ICE_SERVER_URL_REMOTE'), # The ICE URL for remote side, e.g. turn:x.x.x.x:3478. This is only required when the ICE address for remote side is different from local side.
@@ -46,10 +76,10 @@ def load_env_variables():
         "storage_account_container_name": os.environ.get('STORAGE_ACCOUNT_CONTAINER_NAME'),
         "storage_account_key": os.environ.get('STORAGE_ACCOUNT_KEY'),
         # Azure SQL
-        "sql_server": os.environ.get('SQL_SERVER'),
-        "sql_database": os.environ.get('SQL_DATABASE'),
-        "sql_username": os.environ.get('SQL_USERNAME'),
-        "sql_password": os.environ.get('SQL_PASSWORD')             
+        "sql_server": "acets-sql-db-server.database.windows.net",
+        "sql_database": "acets",
+        "sql_username": "CloudSAfc2feaea",
+        "sql_password": "Xptgpe130588!"            
     }
 
 
