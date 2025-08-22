@@ -60,7 +60,7 @@ def load_env_variables():
         "user_assigned_managed_identity_client_id": None, # e.g. the client id of user assigned managed identity accociated to your app service (optional, only used for private endpoint and user assigned managed identity)
         # OpenAI resource
         "azure_openai_endpoint": "https://acets-ai-foundry-dev-eastus.openai.azure.com/", # e.g. https://my-aoai.openai.azure.com/
-        "azure_openai_api_key": "t8rifsaY8FLwy79SVjUeoM6p73lorgbz1Ev6rA9aoj2PIaUH1rkJQQJ99BFACYeBjFXJ3w3AAAAACOGQt5R",
+        "azure_openai_api_key": "At8rifsaY8FLwy79SVjUeoM6p73lorgbz1Ev6rA9aoj2PIaUH1rkJQQJ99BFACYeBjFXJ3w3AAAAACOGQt5R",
         "azure_openai_deployment_name": "gpt-4.1-mini", # e.g. my-gpt-35-turbo-deployment
         # Cognitive search resource (optional)
         "cognitive_search_endpoint": "https://acets-dev-ai-search.search.windows.net", # e.g. https://my-cognitive-search.search.windows.net/
